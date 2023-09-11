@@ -17,6 +17,7 @@ export default class PortfolioPage {
   transferButton = () => getElementById("transfer-button");
   swapTransferMenuButton = () => getElementById("swap-transfer-button");
   sendTransferMenuButton = () => getElementById("transfer-send-button");
+  depositTransfertMenuButton = () => getElementById("transfer-deposit-button");
   sendMenuButton = () => getElementById("send-button");
   marketTabButton = () => getElementById("tab-bar-market");
   earnButton = () => getElementById("tab-bar-earn");
@@ -73,5 +74,9 @@ export default class PortfolioPage {
 
   openEarnApp() {
     return tapByElement(this.earnButton());
+  }
+
+  navigateToDepositFromTransferMenu() {
+    return tapByElement(this.depositTransfertMenuButton());
   }
 }
