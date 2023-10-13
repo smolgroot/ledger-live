@@ -1,4 +1,4 @@
-import { getElementById, typeTextByElement, tapByText, tapByElement } from "../../helpers";
+import { getElementById, tapByText, tapByElement } from "../../helpers";
 
 export default class MarketPage {
   searchBar = () => getElementById("search-box");
@@ -7,10 +7,6 @@ export default class MarketPage {
   starMarketListButton = () => getElementById("starred");
   buyNanoButton = () => getElementById("market-buy-btn");
   openMarketPlaceButton = () => getElementById("market-place-btn");
-
-  searchAsset(asset: string) {
-    return typeTextByElement(this.searchBar(), asset);
-  }
 
   openAssetPage(selectAsset: string) {
     return tapByText(selectAsset);
