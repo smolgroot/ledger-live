@@ -117,6 +117,7 @@ export const SyncOnboarding = ({ navigation, route }: SyncOnboardingScreenProps)
   // Called when the ESC is complete
   const notifyOnboardingEarlyCheckEnded = useCallback(() => {
     setToggleOnboardingEarlyCheckType("exit");
+    setCurrentStep("loading");
   }, []);
 
   // Called when the device seems not to be in the correct state anymore.

@@ -265,6 +265,7 @@ export default class Root extends Component {
   };
 
   render() {
+    console.log("render app");
     return (
       <RebootProvider onRebootStart={this.onRebootStart}>
         <LedgerStoreProvider onInitFinished={this.onInitFinished}>
