@@ -1,7 +1,7 @@
 import { expect, web, by } from "detox";
 import PortfolioPage from "../models/wallet/portfolioPage";
 import MarketPage from "../models/market/marketPage";
-import Common from "e2e/models/common";
+import Common from "../models/common";
 import { loadConfig } from "../bridge/server";
 import { isAndroid, getElementByText } from "../helpers";
 import jestExpect from "expect";

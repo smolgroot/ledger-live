@@ -11,7 +11,7 @@ import SwapFormPage from "../models/trade/swapFormPage";
 import DepositPage from "../models/trade/depositPage";
 import OnboardingSteps from "../models/onboarding/onboardingSteps";
 import AccountPage from "../models/accounts/accountPage";
-import Common from "e2e/models/common";
+import Common from "../models/common";
 
 let accountPage: AccountPage;
 let onboardingSteps: OnboardingSteps;

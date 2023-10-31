@@ -3,7 +3,7 @@ import DepositPage from "../models/trade/depositPage";
 import { loadBleState, loadConfig } from "../bridge/server";
 import DeviceAction from "../models/DeviceAction";
 import { DeviceModelId } from "@ledgerhq/devices";
-import Common from "e2e/models/common";
+import Common from "../models/common";
 
 let portfolioPage: PortfolioPage;
 let deviceAction: DeviceAction;
