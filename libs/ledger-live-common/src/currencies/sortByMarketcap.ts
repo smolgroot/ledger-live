@@ -31,23 +31,29 @@ function lazyLoadTickerMap() {
   return m;
 }
 
+function getCurrencyId(currency: Currency): string {
+  if ("id" in currency && currency.id) {
+    return currency.id;
+  }
+  return currency.ticker;
+}
+
 export const sortByMarketcap = <C extends Currency>(currencies: C[], tickers: string[]): C[] => {
-  const m = lazyLoadTickerMap();
-  const list = currencies.slice(0);
-  const prependList: C[] = [];
+  const tickerMap = lazyLoadTickerMap();
+  const sortedCurrenciesMap: Map<string, C> = new Map();
+
   tickers.forEach(ticker => {
-    const item: C | undefined = m.get(ticker) as C | undefined;
-
-    if (item) {
-      const i = list.indexOf(item);
-
-      if (i !== -1) {
-        list.splice(i, 1);
-        prependList.push(item);
-      }
+    const currency = tickerMap.get(ticker) as C | undefined;
+    if (currency) {
+      sortedCurrenciesMap.set(getCurrencyId(currency), currency);
     }
   });
-  return prependList.concat(list);
+
+  const remainingCurrencies = currencies.filter(
+    currency => !sortedCurrenciesMap.has(getCurrencyId(currency)),
+  );
+
+  return Array.from(sortedCurrenciesMap.values()).concat(remainingCurrencies);
 };
 
 let marketcapTickersCache;
