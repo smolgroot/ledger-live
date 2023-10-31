@@ -1,4 +1,4 @@
-import { getElementById, typeTextByElement } from "e2e/helpers";
+import { getElementById, typeTextByElement } from "../helpers";
 
 export default class Common {
   searchBarId = "common-search-field";
