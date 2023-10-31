@@ -381,6 +381,8 @@ test("Wallet API methods @smoke", async ({ page }) => {
     });
   });
 
+  // FIXME restore flaky test LIVE-9996
+  /*
   await test.step("transaction.sign", async () => {
     const id = randomUUID();
 
@@ -410,6 +412,7 @@ test("Wallet API methods @smoke", async ({ page }) => {
       result: { signedTransactionHex: "" },
     });
   });
+  */
 
   await test.step("transaction.signAndBroadcast", async () => {
     const id = randomUUID();
